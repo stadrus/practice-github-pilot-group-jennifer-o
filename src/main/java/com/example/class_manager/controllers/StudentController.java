@@ -20,7 +20,7 @@ public class StudentController {
     }
 
     @GetMapping("/{id}")
-    public Student getById(@PathVariable Long id) { return studentRepository.findById(id).orElse(null); }
+    public Student getById(@PathVariable int id) { return studentRepository.findById(id).orElse(null); }
 
     @PostMapping
     public Student createStudent(@RequestBody Student student) {
@@ -28,13 +28,13 @@ public class StudentController {
     }
 
     @PutMapping("/{id}")
-    public Student update(@PathVariable Long id, @RequestBody Student student) {
+    public Student update(@PathVariable int id, @RequestBody Student student) {
         String studentName = student.getName();
         student.setName(studentName);
         return studentRepository.save(student);
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) { studentRepository.deleteById(id); }
+    public void delete(@PathVariable int id) { studentRepository.deleteById(id); }
 }
 
