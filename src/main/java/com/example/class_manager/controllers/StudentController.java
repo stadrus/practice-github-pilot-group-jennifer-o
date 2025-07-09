@@ -23,7 +23,8 @@ public class StudentController {
     public Student getById(@PathVariable int id) { return studentRepository.findById(id).orElse(null); }
 
     @PostMapping
-    public Student createStudent(@RequestBody Student student) {
+    public Student createStudent(@RequestBody String name) {
+        Student student = new Student(name);
         return studentRepository.save(student);
     }
 

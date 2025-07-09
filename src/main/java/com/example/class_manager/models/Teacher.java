@@ -11,6 +11,12 @@ public class Teacher {
     @Column(name = "name")
     private String name;
 
+    // Constructors
+    public Teacher () {};
+    public Teacher(String name) {
+        this.name = name;
+    }
+
     // Getters and setters
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }

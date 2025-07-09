@@ -25,7 +25,8 @@ public class TeacherController {
     }
 
     @PostMapping
-    public Teacher create(@RequestBody Teacher teacher) {
+    public Teacher create(@RequestBody String name) {
+        Teacher teacher = new Teacher(name);
         return teacherRepository.save(teacher);
     }
 
